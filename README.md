@@ -65,7 +65,7 @@ The system intelligently routes queries based on intent and provides optional PD
 ## 📂 Project Structure
 
 ```
-antigravity-practice/
+Multi-AI-Agent-Assistant/
 ├── backend/                # Node.js Express Backend
 │   ├── agents/             # AI Agent logic (Sales, Report, Summary)
 │   ├── managers/           # Agent orchestration
