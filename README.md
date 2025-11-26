@@ -6,15 +6,15 @@ A full-stack application featuring a Node.js Express backend with intelligent AI
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [Usage](#usage)
-- [Tech Stack](#tech-stack)
-- [API Endpoints](#api-endpoints)
-- [Project Structure](#project-structure)
+- [Overview](#-overview)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Prerequisites](#-prerequisites)
+- [Installation](#-installation)
+- [Running the Application](#-running-the-application)
+- [API Endpoints](#-api-endpoints)
+- [Screenshots](#-screenshots)
 
 ## 🎯 Overview
 
@@ -45,10 +45,40 @@ The system intelligently routes queries based on intent and provides optional PD
 - ⬇️ **Conditional PDF Downloads** - Download button appears only when PDF is available
 - 🔄 **Session-based Chat** - Conversation persists until page refresh
 
-## 📸 Screenshots
+## 🛠️ Tech Stack
 
-![Screenshot 1](assets/ss1.png)
-![Screenshot 2](assets/ss2.png)
+### Frontend
+
+- **React** (v19) - UI Library
+- **Vite** - Build tool
+- **Axios** - HTTP Client
+- **CSS Modules** - Styling
+
+### Backend
+
+- **Node.js** - Runtime environment
+- **Express** - Web framework
+- **PDFKit** - PDF generation
+- **Cors** - Cross-Origin Resource Sharing
+- **Body-Parser** - Request parsing
+
+## 📂 Project Structure
+
+```
+antigravity-practice/
+├── backend/                # Node.js Express Backend
+│   ├── agents/             # AI Agent logic (Sales, Report, Summary)
+│   ├── managers/           # Agent orchestration
+│   ├── routes/             # API routes
+│   ├── utils/              # Helper functions
+│   └── server.js           # Entry point
+├── frontend/               # React Frontend
+│   ├── src/                # Source code
+│   ├── public/             # Static assets
+│   └── vite.config.js      # Vite configuration
+├── assets/                 # Project screenshots and assets
+└── README.md               # Project documentation
+```
 
 ## 🛠️ Prerequisites
 
@@ -57,9 +87,78 @@ Before you begin, ensure you have the following installed:
 - **Node.js** (v14 or higher) - [Download](https://nodejs.org/)
 - **npm** (comes with Node.js)
 
-To verify your installation:
+## 📥 Installation
 
-```bash
-node --version
-npm --version
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/abhich21/Multi-AI-Agent-Assistant.git
+   cd Multi-AI-Agent-Assistant
+   ```
+
+2. **Install Backend Dependencies**
+
+   ```bash
+   cd backend
+   npm install
+   ```
+
+3. **Install Frontend Dependencies**
+   ```bash
+   cd ../frontend
+   npm install
+   ```
+
+## 🚀 Running the Application
+
+You need to run both the backend and frontend servers.
+
+1. **Start the Backend** (runs on port 3000)
+
+   ```bash
+   cd backend
+   npm start
+   # or for development
+   npm run dev
+   ```
+
+2. **Start the Frontend** (runs on port 5173)
+   ```bash
+   cd frontend
+   npm run dev
+   ```
+
+Open [http://localhost:5173](http://localhost:5173) to view the application.
+
+## 🔌 API Endpoints
+
+### Chat Endpoint
+
+**POST** `/api/chat`
+
+Process a user query through the multi-agent system.
+
+**Request Body:**
+
+```json
+{
+  "query": "Give me a summary of sales for October"
+}
 ```
+
+**Response:**
+
+```json
+{
+  "response": "In October, the total revenue was $15,000...",
+  "data": { ... },
+  "agent": "SummaryAgent",
+  "pdfAvailable": true,
+  "pdfUrl": "/reports/summary-123456.pdf"
+}
+```
+
+## 📸 Screenshots
+
+![Screenshot 1](assets/ss1.png)
+![Screenshot 2](assets/ss2.png)
